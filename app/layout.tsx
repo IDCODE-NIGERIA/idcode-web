@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Footer } from "@/components/Footer";
+import { NavBar } from "@/components/Navbar";
 
 const montserratHeading = Montserrat({subsets:['latin'],variable:'--font-heading'});
-
+const poppins = Poppins({
+  subsets: ['latin'], variable: '--font-poppins',
+  weight: "100"
+});
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
@@ -28,11 +33,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, montserratHeading.variable)}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <head>
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&display=optional"
+          rel="stylesheet"
+        />
+      </head>
+      <body
+        className={`${montserratHeading.variable} ${inter.variable} ${poppins.variable} ${geistSans.variable} ${geistMono.variable} font-body bg-white text-text-light transition-colors duration-300`}
+      >
+        <NavBar/>
+        <div className="min-h-screen flex flex-col selection:bg-primary/30 bg-white">
+          {/* Passing empty currentHash initially; will refactor Navbar to manage its own state */}
+          <main className="grow">{children}</main>
+        </div>
+        <Footer/>
+      </body>
     </html>
   );
 }
