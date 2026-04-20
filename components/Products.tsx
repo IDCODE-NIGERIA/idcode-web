@@ -10,32 +10,32 @@ const PRODUCTS = [
     id: "identity-code",
     tabLabel: "Identity Code",
     title: "Secure infrastructure for your users",
-    description: "Identify users faster and more securely with best-in-class biometric verification.",
+    description: "A secure and intelligent verification system embedded into ID cards, enabling instant verification of individuals.",
     features: [
-      "Frictionless user onboarding",
-      "Enterprise-grade security",
-      "Real-time fraud detection",
-      "Comprehensive compliance"
+      "Unique encrypted verification code per user.",
+      "Direct integration with NIMC for real-time identity verification.",
+      "Issuer verufication through CAC registration and validation.",
+      "Reduces identity fraud and enhances trust in digital interactions."
     ],
     mediaType: "image",
-    mediaSrc: "/agency.svg",
+    mediaSrc: "/scan2.svg",
     link: "/identity",
-    width: 500,
-    height: 500
+    width: 400,
+    height: 400
   },
   {
     id: "access-code",
     tabLabel: "Access Code",
-    title: "Total control over access permissions",
-    description: "Manage internal and external access to all your applications in one seamless platform.",
+    title: "Total control for user access in events and schedules",
+    description: "A smart access control solution that allows organisations or individuals to monitor, manage and control entry into physical or digital spaces.",
     features: [
-      "Granular role-based access",
-      "Automated provisioning",
-      "Detailed audit logging",
-      "API-first integration"
+      "Unique Access Code generation per user.",
+      "Real-time access monitoring and control",
+      "Centralized analytics dashboard.",
+      "Multi-location support for events and venues."
     ],
     mediaType: "image",
-    mediaSrc: "/product.svg",
+    mediaSrc: "/agency.svg",
     link: "/access",
     width: 500,
     height: 500
@@ -43,19 +43,19 @@ const PRODUCTS = [
   {
     id: "product-code",
     tabLabel: "Product Code",
-    title: "Accelerate your app development",
-    description: "Use our pre-built, production-ready modules to bring your products to market faster.",
+    title: "Increase product authenticity and consumer trust",
+    description: "A product verification solution that ensures the authenticity of your products and builds consumer confidence.",
     features: [
-      "Pre-built modules & templates",
-      "Scalable microservices",
-      "Developer-friendly SDKs",
-      "24/7 dedicated support"
+      "QR code or unique scratch-off generation for each product.",
+      "Real-time product verification for consumers via web or mobile.",
+      "Duplicate code detection to prevent counterfeiting.",
+      "Ensures product tracing and authenticity, enhancing brand reputation and consumer trust."
     ],
     mediaType: "image",
-    mediaSrc: "/scan2.svg",
+    mediaSrc: "/product.svg",
     link: "/product",
-    width: 300,
-    height: 300
+    width: 500,
+    height: 500
   }
 ];
 
@@ -204,14 +204,6 @@ const ProductRow = React.forwardRef<HTMLDivElement, ProductRowProps>(
             <p className="text-sm sm:text-base lg:text-lg text-onSurfaceMuted mt-3 sm:mt-4 max-w-md">
               {product.description}
             </p>
-            
-            <Link 
-              href={product.link}
-              className="inline-flex items-center mt-4 sm:mt-6 text-primary font-medium text-sm sm:text-base hover:text-idcode-bg transition-colors"
-            >
-              Learn more about {product.tabLabel} 
-              <svg className="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </Link>
 
             <ul className="mt-6 sm:mt-8 space-y-2 sm:space-y-3">
               {product.features.map((feature, i) => (
@@ -221,6 +213,15 @@ const ProductRow = React.forwardRef<HTMLDivElement, ProductRowProps>(
                 </li>
               ))}
             </ul>
+
+            <Link 
+              href={product.link}
+              className="inline-flex items-center mt-4 sm:mt-6 text-primary font-medium text-sm sm:text-base hover:text-idcode-bg transition-colors"
+            >
+              Learn more about {product.tabLabel} 
+              <svg className="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </Link>
+
           </motion.div>
         </div>
 
