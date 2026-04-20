@@ -109,24 +109,24 @@ export function Products() {
   };
 
   return (
-    <section className="relative w-full bg-surface py-12 md:py-24 bg-[#F5F5F5]" id="products">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center text-center pb-12">
-          <h2 className="text-4xl font-display font-bold tracking-tight sm:text-5xl">
+    <section className="relative w-full bg-surface py-8 sm:py-12 lg:py-24 bg-[#F5F5F5]" id="products">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center text-center pb-8 sm:pb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight">
             Your IDCODE suite
           </h2>
         </div>
       </div>
 
       {/* Sticky Tabs */}
-      <div className="sticky top-0 z-40 w-full bg-surface/90 backdrop-blur-md border-b border-gray-200">
-        <div className="container mx-auto max-w-7xl px-4">
+      <div className="sticky top-16 sm:top-14 z-40 w-full bg-surface/90 backdrop-blur-md border-b border-gray-200">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto no-scrollbar">
             {PRODUCTS.map((product) => (
               <button
                 key={product.id}
                 onClick={() => scrollToSection(product.id)}
-                className={`relative flex-1 py-4 px-6 text-sm md:text-base font-medium transition-colors whitespace-nowrap outline-none
+                className={`relative py-3 sm:py-4 px-3 sm:px-6 text-xs sm:text-sm lg:text-base font-medium transition-colors whitespace-nowrap outline-none
                   ${activeTab === product.id ? "text-primary" : "text-onSurfaceMuted hover:text-onSurface"}
                 `}
               >
@@ -146,7 +146,7 @@ export function Products() {
       </div>
 
       {/* Product Rows */}
-      <div className="container mx-auto max-w-7xl px-4 py-12 space-y-24 md:space-y-40" ref={containerRef}>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 space-y-12 sm:space-y-16 lg:space-y-40" ref={containerRef}>
         {PRODUCTS.map((product, index) => (
           <ProductRow
             key={product.id}
@@ -186,37 +186,37 @@ const ProductRow = React.forwardRef<HTMLDivElement, ProductRowProps>(
       <div 
         id={product.id} 
         ref={ref}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center min-h-125"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-fit lg:min-h-125"
       >
         {/* Left Column: Text & CTA */}
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-4 sm:space-y-6 order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0.5, y: 20 }}
             animate={{ opacity: isActive ? 1 : 0.5, y: isActive ? 0 : 20 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="flex items-center space-x-2 text-sm font-semibold tracking-wider text-primary uppercase mb-2">
+            <div className="flex items-center space-x-2 text-xs sm:text-sm font-semibold tracking-wider text-primary uppercase mb-2">
                <span>{product.tabLabel}</span>
             </div>
-            <h3 className="text-3xl md:text-5xl font-display font-bold leading-tight text-onSurface">
+            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold leading-tight text-onSurface">
               {product.title}
             </h3>
-            <p className="text-lg text-onSurfaceMuted mt-4 max-w-md">
+            <p className="text-sm sm:text-base lg:text-lg text-onSurfaceMuted mt-3 sm:mt-4 max-w-md">
               {product.description}
             </p>
             
             <Link 
               href={product.link}
-              className="inline-flex items-center mt-6 text-primary font-medium hover:text-idcode-bg transition-colors"
+              className="inline-flex items-center mt-4 sm:mt-6 text-primary font-medium text-sm sm:text-base hover:text-idcode-bg transition-colors"
             >
               Learn more about {product.tabLabel} 
               <svg className="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </Link>
 
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-6 sm:mt-8 space-y-2 sm:space-y-3">
               {product.features.map((feature, i) => (
-                <li key={i} className="flex items-start text-onSurfaceMuted">
-                  <svg className="w-5 h-5 text-primary mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 10 0 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <li key={i} className="flex items-start text-xs sm:text-sm text-onSurfaceMuted">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary mr-2 sm:mr-3 shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 10 0 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                   <span>{feature}</span>
                 </li>
               ))}
@@ -225,7 +225,7 @@ const ProductRow = React.forwardRef<HTMLDivElement, ProductRowProps>(
         </div>
 
         {/* Right Column: Media container */}
-        <div className="relative w-full h-87.5 md:h-125 bg-secondary rounded-2xl overflow-hidden shadow-ambient group">
+        <div className="relative w-full h-56 sm:h-72 lg:h-125 bg-secondary rounded-xl sm:rounded-2xl overflow-hidden shadow-ambient group order-1 lg:order-2">
           {product.mediaType === "video" ? (
             <video
               ref={videoRef}

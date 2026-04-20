@@ -73,10 +73,10 @@ export const Testimonials = () => {
     ];
 
     return (
-        <section className="bg-white py-16">
-            <div className="max-w-7xl mx-auto px-6 lg:px-16">
+        <section className="bg-white py-8 sm:py-12 lg:py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
                 {/* Logo List */}
-                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 mb-16">
+                <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 mb-12 sm:mb-16">
                     {logos.map((logo) => (
                         <button
                             key={logo.id}
@@ -87,7 +87,7 @@ export const Testimonials = () => {
                                 : "opacity-40 grayscale hover:opacity-70 hover:grayscale-0"
                             }`}
                         >
-                            <div className="relative w-32 h-12 md:w-40 md:h-16">
+                            <div className="relative w-20 h-8 sm:w-32 sm:h-12 md:w-40 md:h-16">
                                 <Image
                                     src={logo.src}
                                     alt={logo.name}
@@ -110,25 +110,25 @@ export const Testimonials = () => {
                 </div>
 
                 {/* Testimonials Grid */}
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                     {TESTIMONIALS_DATA[activeTab as keyof typeof TESTIMONIALS_DATA].map((testimonial, index) => (
                         <div 
                             key={index} 
-                            className="bg-[#F9FAFB] p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+                            className="bg-[#F9FAFB] p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow duration-300"
                         >
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden relative">
+                            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 overflow-hidden relative shrink-0">
                                     {/* Placeholder for avatar since I don't have the actual ones */}
-                                    <div className="w-full h-full flex items-center justify-center bg-[#4ADE80] text-black font-bold">
+                                    <div className="w-full h-full flex items-center justify-center bg-[#4ADE80] text-black font-bold text-sm">
                                         {testimonial.name.charAt(0)}
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                                    <h4 className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</h4>
+                                    <p className="text-xs sm:text-sm text-gray-500">{testimonial.role}</p>
                                 </div>
                             </div>
-                            <p className="text-gray-600 italic leading-relaxed">
+                            <p className="text-xs sm:text-sm lg:text-base text-gray-600 italic leading-relaxed">
                                 "{testimonial.content}"
                             </p>
                         </div>

@@ -52,26 +52,26 @@ export const Stats = () => {
         };
     }, [])
     return (
-        <section className="bg-[#F2EAD3] py-16">
-            <div className="max-w-7xl mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-x-20 items-center">
+        <section className="bg-[#F2EAD3] py-8 sm:py-12 lg:py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-x-20 items-center">
                 {/* Left Column */}
                 <div>
-                    <h2 className="text-3xl font-bold">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
                         Most Extensive Identity Verification and Access Solution in Africa
                     </h2>
-                    <p className="mt-4">
+                    <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-onSurfaceMuted leading-relaxed">
                         With over 100 million identities verified and 500+ enterprise customers, our platform is the trusted choice for secure and efficient identity management across the continent.
                     </p>
-                    <div className="mt-10 flex flex-col items-start">
-                        <h3 className="text-2xl font-medium">Here&apos;s what the numbers say:</h3>
-                        <div className="flex flex-col items-start">
-                            <p className="text-4xl font-bold text-idcode-green">100M+</p>
-                            <p className="text-sm text-onSurfaceMuted">Identities Verified</p>
+                    <div className="mt-8 sm:mt-10 flex flex-col items-start">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-medium">Here&apos;s what the numbers say:</h3>
+                        <div className="flex flex-col items-start mt-4">
+                            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-idcode-green">100M+</p>
+                            <p className="text-xs sm:text-sm text-onSurfaceMuted">Identities Verified</p>
                         </div>
                     </div>
                 </div>
                 {/* Right Column */}
-                <div className="flex justify-end">
+                <div className="flex justify-center lg:justify-end">
                     <canvas ref={canvaRef}></canvas>
                 </div>
             </div>
