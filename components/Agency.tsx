@@ -4,7 +4,7 @@ import Image from 'next/image';
 export const Agency = () => {
   return (
     <section className="bg-[#F5F5F5] py-8 sm:py-12 lg:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 bg-[#F2EAD3] rounded-lg sm:rounded-2xl p-6 sm:p-8 lg:p-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 bg-[#93D291] rounded-lg sm:rounded-2xl p-6 sm:p-8 lg:p-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Image Column */}
           <div className="order-2 lg:order-1">

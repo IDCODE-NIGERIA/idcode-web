@@ -18,10 +18,11 @@ const PRODUCTS = [
       "Reduces identity fraud and enhances trust in digital interactions."
     ],
     mediaType: "image",
-    mediaSrc: "/scan2.svg",
+    mediaSrc: "/IMG_1471.png",
     link: "/identity",
-    width: 400,
-    height: 400
+    width: 300,
+    height: 300,
+    className: "border-8 border-black"
   },
   {
     id: "access-code",
@@ -35,10 +36,11 @@ const PRODUCTS = [
       "Multi-location support for events and venues."
     ],
     mediaType: "image",
-    mediaSrc: "/agency.svg",
+    mediaSrc: "/IMG_1472.png",
     link: "/access",
-    width: 500,
-    height: 500
+    width: 300,
+    height: 300,
+    className: "border-8 border-black"
   },
   {
     id: "product-code",
@@ -52,10 +54,11 @@ const PRODUCTS = [
       "Ensures product tracing and authenticity, enhancing brand reputation and consumer trust."
     ],
     mediaType: "image",
-    mediaSrc: "/product.svg",
+    mediaSrc: "/IMG_1472.png",
     link: "/product",
-    width: 500,
-    height: 500
+    width: 300,
+    height: 300,
+    className: "border-8 border-black"
   }
 ];
 
@@ -119,7 +122,7 @@ export function Products() {
       </div>
 
       {/* Sticky Tabs */}
-      <div className="sticky top-16 sm:top-14 z-40 w-full bg-surface/90 backdrop-blur-md border-b border-gray-200">
+    {/*  <div className="sticky top-16 sm:top-14 z-40 w-full bg-surface/90 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto no-scrollbar">
             {PRODUCTS.map((product) => (
@@ -143,7 +146,7 @@ export function Products() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Product Rows */}
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 space-y-12 sm:space-y-16 lg:space-y-40" ref={containerRef}>
@@ -226,7 +229,7 @@ const ProductRow = React.forwardRef<HTMLDivElement, ProductRowProps>(
         </div>
 
         {/* Right Column: Media container */}
-        <div className="relative w-full h-56 sm:h-72 lg:h-125 bg-secondary rounded-xl sm:rounded-2xl overflow-hidden shadow-ambient group order-1 lg:order-2">
+        <div className="relative border-2 w-80 h-56 sm:h-72 lg:h-80 bg-secondary rounded-xl sm:rounded-2xl overflow-hidden shadow-ambient group order-1 lg:order-2 ml-auto">
           {product.mediaType === "video" ? (
             <video
               ref={videoRef}

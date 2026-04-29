@@ -52,7 +52,7 @@ export const Stats = () => {
         };
     }, [])
     return (
-        <section className="bg-[#F2EAD3] py-8 sm:py-12 lg:py-16">
+        <section className="bg-[#93D291] py-8 sm:py-12 lg:py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-x-20 items-center">
                 {/* Left Column */}
                 <div>
